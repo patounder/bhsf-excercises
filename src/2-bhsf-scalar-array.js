@@ -21,6 +21,6 @@ const event = {
 };
 
 const response = handler(event);
-//console.log('Response is ', response);
+console.log('Response is ', response);
 
 module.exports = prodScalarArray;

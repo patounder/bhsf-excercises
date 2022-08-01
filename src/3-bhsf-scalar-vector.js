@@ -39,5 +39,5 @@ const event = {
     })
 };
 
-//handler(event).then((response) => {console.log('Response is ', response)});
+handler(event).then((response) => {console.log('Response is ', response)});
 module.exports = handler;
