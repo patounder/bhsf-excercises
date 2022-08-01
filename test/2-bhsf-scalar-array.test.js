@@ -1,6 +1,15 @@
 const prodScalarArray = require('../src/2-bhsf-scalar-array');
 
 describe("Tests Scalar Product Array", () => {
+
+    test('when [51] product 3', () => {
+        expect(prodScalarArray(3, [51].sort())).toEqual([153].sort());
+    });
+
+    test('when [] product 10', () => {
+        expect(prodScalarArray(10, [].sort())).toEqual([].sort());
+    });
+
     test('when [1, 2, 3] product 2', () => {
         expect(prodScalarArray(2, [1, 2, 3].sort())).toEqual([2, 4, 6].sort());
     });
