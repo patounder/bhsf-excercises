@@ -1,17 +1,15 @@
-function calcFibNumber(fibPosition) {
+const fib1 = 1;
+const fib0 = 0;
 
-    if(fibPosition <= 0) return 0;
-
-    switch(fibPosition){
-        case 1:
-            return 1;
-        default:
-            return calcFibNumber(fibPosition - 1) + calcFibNumber(fibPosition - 2);
-    }
+function calcFibNumber(term, val, prev)
+{
+    if(term == 0) return prev;
+    return calcFibNumber(term - 1, val + prev, val);
 }
+
 const handler = (event, context) => {
     const body = JSON.parse(event.body);
-    const fibResponse = calcFibNumber(body.fibNumber);
+    const fibResponse = calcFibNumber(body.fibNumber, fib1, fib0);
     return {
         statusCode: 200,
         body:`Fibonacci number for index ${body.fibNumber} is ${fibResponse}`};
